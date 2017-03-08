@@ -24,9 +24,12 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 
 SOURCES += main.cpp \
-    myslider.cpp
+    myslider.cpp \
+    calculatorform.cpp
 
 HEADERS  += \
-    myslider.h
+    myslider.h \
+    calculatorform.h
 
-FORMS    +=
+FORMS    += \
+    calculatorform.ui
