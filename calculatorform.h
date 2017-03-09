@@ -1,28 +1,28 @@
 #ifndef CALCULATORFORM_H
 #define CALCULATORFORM_H
 
+#include <QMainWindow>
 
-class CalculatorForm : public QWidget
+namespace Ui {
+    class CalculatorForm;
+}
+
+class CalculatorForm : public QMainWindow
 {
+    Q_OBJECT
 public:
     CalculatorForm(QWidget *parent = 0);
+    ~CalculatorForm();
 
-private slots:
-    MySlider slider1 = new MySlider(this);
-    MySlider slider2 = new MySlider(this);
-    MySlider slider3 = new MySlider(this);
-    MySlider slider4 = new MySlider(this);
-    MySlider slider5 = new MySlider(this);
-    MySlider slider6 = new MySlider(this);
-    MySlider slider7 = new MySlider(this);
-    MySlider slider8 = new MySlider(this);
-    MySlider slider_mt1 = new MySlider(this);
-    MySlider slider_mt2 = new MySlider(this);
-    MySlider slider_final = new MySlider(this);
+signals:
+    void compute_overall();
+
+public slots:
+    void update_overall(int);
 
 
 private:
-    Ui::CalculatorForm ui;
+    Ui::CalculatorForm *ui;
 
 };
 
