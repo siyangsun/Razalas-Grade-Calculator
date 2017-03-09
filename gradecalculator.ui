@@ -454,6 +454,19 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Midterm 1&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
    </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>620</x>
+      <y>410</y>
+      <width>47</width>
+      <height>13</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>TextLabel</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">
@@ -626,11 +639,11 @@ p, li { white-space: pre-wrap; }
    <hints>
     <hint type="sourcelabel">
      <x>540</x>
-     <y>138</y>
+     <y>108</y>
     </hint>
     <hint type="destinationlabel">
      <x>658</x>
-     <y>144</y>
+     <y>114</y>
     </hint>
    </hints>
   </connection>
@@ -642,11 +655,11 @@ p, li { white-space: pre-wrap; }
    <hints>
     <hint type="sourcelabel">
      <x>550</x>
-     <y>204</y>
+     <y>164</y>
     </hint>
     <hint type="destinationlabel">
      <x>648</x>
-     <y>216</y>
+     <y>176</y>
     </hint>
    </hints>
   </connection>
@@ -658,11 +671,11 @@ p, li { white-space: pre-wrap; }
    <hints>
     <hint type="sourcelabel">
      <x>534</x>
-     <y>340</y>
+     <y>370</y>
     </hint>
     <hint type="destinationlabel">
      <x>652</x>
-     <y>348</y>
+     <y>378</y>
     </hint>
    </hints>
   </connection>
