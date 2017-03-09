@@ -1,6 +1,6 @@
 #-------------------------------------------------
 #
-# Project created by QtCreator 2017-03-01T17:26:02
+# Project created by QtCreator 2017-03-08T16:33:11
 #
 #-------------------------------------------------
 
@@ -23,10 +23,9 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 
-SOURCES += main.cpp \
-    myslider.cpp
+SOURCES += main.cpp\
+        gradecalculator.cpp
 
-HEADERS  += \
-    myslider.h
+HEADERS  += gradecalculator.h
 
-FORMS    +=
+FORMS    += gradecalculator.ui
