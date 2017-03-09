@@ -7,7 +7,6 @@ GradeCalculator::GradeCalculator(QWidget *parent) :
     ui(new Ui::GradeCalculator)
 {
     ui->setupUi(this);
-    connect(ui->horizontalSlider,SIGNAL(valueChanged(int)), ui->result, SLOT(setValue(int)));
 }
 
 GradeCalculator::~GradeCalculator()
