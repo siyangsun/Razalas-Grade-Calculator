@@ -16,11 +16,19 @@ public:
     explicit GradeCalculator(QWidget *parent = 0);
     ~GradeCalculator();
 
-signals:
-    double compute_overall();
-
-public slots:
-    void update_overall(int my_grade);
+private slots:
+    void computeScore();
+    void on_horizontalSlider_valueChanged(int unused);
+    void on_horizontalSlider_2_valueChanged(int unused);
+    void on_horizontalSlider_3_valueChanged(int unused);
+    void on_horizontalSlider_4_valueChanged(int unused);
+    void on_horizontalSlider_5_valueChanged(int unused);
+    void on_horizontalSlider_6_valueChanged(int unused);
+    void on_horizontalSlider_7_valueChanged(int unused);
+    void on_horizontalSlider_8_valueChanged(int unused);
+    void on_horizontalSlider_9_valueChanged(int unused);
+    void on_horizontalSlider_10_valueChanged(int unused);
+    void on_horizontalSlider_11_valueChanged(int unused);
 
 private:
     Ui::GradeCalculator *ui;
