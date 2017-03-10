@@ -16,7 +16,7 @@ GradeCalculator::~GradeCalculator()
 
 void GradeCalculator::computeScore()
 {
-    bool gradingSchemeA = 1;
+    //bool gradingSchemeA = 1;
     //Link this to a button/switch, if it's pressed then change the grading scheme using an if statement on score
     //Same thing with different classes
     double hw1 = this->ui->horizontalSlider->value();
@@ -30,7 +30,7 @@ void GradeCalculator::computeScore()
     double mt1 = this->ui->horizontalSlider_9->value();
     double mt2 = this->ui->horizontalSlider_10->value();
     double final = this->ui->horizontalSlider_11->value();
-    double hw_average = (hw1 + hw2 + hw3 + hw4 + hw5 + hw6 + hw7 + hw8) / 10;
+    double hw_average = (hw1 + hw2 + hw3 + hw4 + hw5 + hw6 + hw7 + hw8) / 8;
     //Might have an option to drop a homework in the future
     double score = (0.25 * hw_average) + (0.20 * mt1) + (0.20 * mt2) + (0.35 * final);
     //Might have multiple grading schemes where it automatically calculates the highest score
