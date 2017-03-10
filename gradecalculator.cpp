@@ -1,6 +1,7 @@
 #include "gradecalculator.h"
 #include "ui_gradecalculator.h"
 #include <QString>
+#include <algorithm>
 
 GradeCalculator::GradeCalculator(QWidget *parent) :
     QMainWindow(parent),
@@ -16,7 +17,8 @@ GradeCalculator::~GradeCalculator()
 
 void GradeCalculator::computeScore()
 {
-    //bool gradingSchemeA = 1;
+    bool gradingSchemeA = this->ui->radioButton->isChecked();
+    bool gradingSchemeB = this->ui->radioButton_2->isChecked();
     //Link this to a button/switch, if it's pressed then change the grading scheme using an if statement on score
     //Same thing with different classes
     double hw1 = this->ui->horizontalSlider->value();
@@ -30,11 +32,25 @@ void GradeCalculator::computeScore()
     double mt1 = this->ui->horizontalSlider_9->value();
     double mt2 = this->ui->horizontalSlider_10->value();
     double final = this->ui->horizontalSlider_11->value();
-    double hw_average = (hw1 + hw2 + hw3 + hw4 + hw5 + hw6 + hw7 + hw8) / 8;
-    //Might have an option to drop a homework in the future
-    double score = (0.25 * hw_average) + (0.20 * mt1) + (0.20 * mt2) + (0.35 * final);
+    double hw_scores[] = {hw1, hw2, hw3, hw4, hw5, hw6, hw7, hw8};
+    //One homework gets dropped
+    double minval = hw_scores[0];
+        for ( int i = 1; i < 8; i++ )
+            if ( hw_scores[i] < minval )
+                minval = hw_scores[i];
+    double hw_average = (hw1 + hw2 + hw3 + hw4 + hw5 + hw6 + hw7 + hw8 - minval) / 7;
+    double score_A = (0.25 * hw_average) + (0.20 * mt1) + (0.20 * mt2) + (0.35 * final);
+    double score_B = (0.25 * hw_average) + (0.30 * std::max(mt1, mt2)) + (0.44 * final);
+    double score = 0;
+    if (gradingSchemeA == true) {
+        score = score_A;
+    }
+    else if (gradingSchemeB == true) {
+        score = score_B;
+    }
     //Might have multiple grading schemes where it automatically calculates the highest score
     ui->result->setText(QString::number(score));
+    ui->result_2->setText(QString::number(std::max(score_A, score_B)));
     return;
 }
 
@@ -92,3 +108,14 @@ void GradeCalculator::on_horizontalSlider_11_valueChanged(int unused)
 {
     computeScore();
 }
+
+void GradeCalculator::on_radioButton_clicked()
+{
+    computeScore();
+}
+
+void GradeCalculator::on_radioButton_2_clicked()
+{
+    computeScore();
+}
+

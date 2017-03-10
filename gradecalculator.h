@@ -29,6 +29,8 @@ private slots:
     void on_horizontalSlider_9_valueChanged(int unused);
     void on_horizontalSlider_10_valueChanged(int unused);
     void on_horizontalSlider_11_valueChanged(int unused);
+    void on_radioButton_clicked();
+    void on_radioButton_2_clicked();
 
 private:
     Ui::GradeCalculator *ui;
